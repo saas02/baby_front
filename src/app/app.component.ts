@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { InformationService } from './services/information.service';
+import { Information } from './interfaces/information';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'baby_front';
+  load = false;
+
+  @Input()
+  Information:Information;
+
+  constructor(
+    private InformationService:InformationService
+  ){
+    this.load = true;
+    this.Information = this.InformationService.getData();
+    console.log(this.Information);
+    //this.information = { };
+    /*this.InformationService.getData().subscribe(
+      data => {
+        this.information = this.InformationService.getJsonData(data)
+        this.load = false;
+        
+      }, err => {
+        console.log(err);
+      }
+    );*/
+  }
 }

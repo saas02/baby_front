@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="six columns">
+        <div class="panel callout">
+            <h2 class="heading_supersize">Te esperamos junto con:</h2>
+            <h2 *ngFor="let partner of Information.partners">
+                {{ partner.name | titlecase }}
+            </h2>
+        </div>
+    </div>
+    <div class="six columns">
+        <div class="panel callout">
+            <h2 class="heading_supersize">Regalo: {{ Information.gifts }}</h2>
+        </div>
+    </div>
+</div>

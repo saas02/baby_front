@@ -1,0 +1,9 @@
+.heading_supersize_center{
+    text-align: center;
+}
+
+.heading_supersize_p{
+    font-family: 'Ranchers',sans-serif;
+    font-weight: normal;
+    color: #38525a !important;
+}
