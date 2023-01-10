@@ -25,6 +25,10 @@ export class InformationService {
       visits: 0,
       gifts: "Panales",
       date: new Date(),
+      address: "Cra 89D # 32 15 Sur",
+      video: "http://player.vimeo.com/video/4749536",
+      latitude: 7.096190,
+      longitude: -73.115030,
       partners: [
         {
           name: "Paola"
@@ -34,6 +38,21 @@ export class InformationService {
         },
         {
           name: "Paula"
+        },
+        {
+          name: "Rene"
+        },
+        {
+          name: "Martha"
+        },
+        {
+          name: "Milena"
+        },
+        {
+          name: "Tobby"
+        },
+        {
+          name: "Medu"
         }
       ]
     }

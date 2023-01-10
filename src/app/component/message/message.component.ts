@@ -10,7 +10,7 @@ export class MessageComponent implements OnInit {
 
   @Input()
   Information:Information;
-  
+
   constructor() { 
     this.Information = {};
   }

@@ -1,20 +1,14 @@
 <div class="row">
     <div class="four columns">
         <h3>Fecha</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra, lacus id interdum ultrices, elit metus
-            semper tellus, vel lacinia libero purus vitae risus. Integer a eros sit amet felis tincidunt commodo.</p><a
-            class="button round" href="#">More &raquo;</a>
+        <h2 class="heading_supersize date"> {{ Information.date | date:'EEEE d MMMM' }}. </h2>
     </div>
     <div class="four columns">
         <h3>Direccion</h3>
-        <p>Vivamus tortor tellus, rutrum sit amet mollis vel, imperdiet consectetur orci. Mauris pharetra congue enim,
-            et sagittis lectus congue ut. Cum sociis natoque penatibus et magnis dis parturient montes.</p><a
-            class="button round" href="#">More &raquo;</a>
+        <h2 class="heading_supersize">{{ Information.address }}. </h2>
     </div>
     <div class="four columns">
         <h3>Ubicacion</h3>
-        <p>Sed vitae nisi leo. Nulla tincidunt, turpis non gravida pharetra, diam sapien posuere massa, non luctus leo
-            mauris at sapien. Donec ut fermentum eros. Vestibulum placerat dui sit amet quam.</p><a class="button round"
-            href="#">More &raquo;</a>
+        <div *ngIf="Information.latitude" id="map"></div>
     </div>
 </div>

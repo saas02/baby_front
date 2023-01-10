@@ -2,8 +2,19 @@
     text-align: center;
 }
 
-.heading_supersize_p{
+.heading_supersize_text{
     font-family: 'Ranchers',sans-serif;
     font-weight: normal;
     color: #38525a !important;
+    font-size: 30px;
+}
+
+.heading_supersize, .date{
+    text-transform: capitalize;
+}
+
+#map {
+  height: 200px;
+  width: 100%;
+  max-width: 600px;
 }

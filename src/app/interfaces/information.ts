@@ -7,6 +7,9 @@ export interface Information {
     gifts?: string;
     date?: Date;
     address?: string;
+    latitude?: number;
+    longitude?: number;
+    video?:string;
     partners?: Array<Partner>;
 }
 
