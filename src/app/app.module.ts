@@ -30,7 +30,7 @@ registerLocaleData(localeEsCo, 'es-CO');
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [
     InformationService,

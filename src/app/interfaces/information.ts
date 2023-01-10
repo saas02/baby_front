@@ -2,7 +2,7 @@ export interface Information {
     id?: string;
     name?: string;
     phone?: number;
-    confirmation?: boolean;
+    confirmation?: any;
     visits?: number;
     gifts?: string;
     date?: Date;

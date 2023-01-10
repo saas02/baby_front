@@ -21,14 +21,14 @@ export class InformationService {
       id: "jduijiiojioj",
       name: "Sergio",
       phone: 3167259347,
-      confirmation: false,
+      confirmation: null,
       visits: 0,
       gifts: "Panales",
       date: new Date(),
       address: "Cra 89D # 32 15 Sur",
       video: "http://player.vimeo.com/video/4749536",
-      latitude: 7.096190,
-      longitude: -73.115030,
+      latitude: 4.635517934252235,
+      longitude: -74.14845602276542,
       partners: [
         {
           name: "Paola"

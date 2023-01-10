@@ -13,17 +13,21 @@ import * as L from 'leaflet';
 export class InformationComponent implements AfterViewInit {
 
   @Input()
-  Information:Information;
+  Information: Information;
   map: any;
 
-  constructor() { 
+  constructor() {
     this.Information = {};
   }
 
   public ngAfterViewInit(): void {
-    if(this.Information.latitude && this.Information.longitude){
-      this.loadMap();
+    if (this.Information.latitude && this.Information.longitude) {
+      this.loadMap(this.Information.latitude, this.Information.longitude);
     }
+  }
+
+  changeDecision(){
+    console.log("decision");
   }
 
   private getCurrentPosition(): any {
@@ -42,8 +46,8 @@ export class InformationComponent implements AfterViewInit {
     });
   }
 
-  private loadMap(): void {
-    this.map = L.map('map').setView([0, 0], 1);
+  private loadMap(latitude: number, longitude: number): void {
+    this.map = L.map('map').setView([latitude, longitude], 10);
 
     const icon = L.icon({
       iconUrl: 'assets/images/marker-icon.png',
@@ -51,23 +55,23 @@ export class InformationComponent implements AfterViewInit {
       popupAnchor: [13, 0],
     });
 
-    //L.marker([this.Information.latitude, this.Information.longitude], { icon }).bindPopup('Angular Leaflet');
-    
+    const marker = L.marker([latitude, longitude], { icon }).bindPopup('Te esperamos');
+    marker.addTo(this.map).openPopup();
+    this.map.flyTo([latitude, longitude], 13)
+
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: 'mapbox/streets-v11',
       tileSize: 512,
       zoomOffset: -1,
       accessToken: environment.mapbox.accessToken,
-    }).addTo(this.map);
+    }).addTo(this.map).openPopup();
 
     this.getCurrentPosition()
-    .subscribe((position: any) => {
-      this.map.flyTo([position.latitude, position.longitude], 13);
-      const marker = L.marker([position.latitude, position.longitude], { icon }).bindPopup('Angular Leaflet');
-      marker.addTo(this.map);
-    });
+      .subscribe((position: any) => {
+        const marker = L.marker([position.latitude, position.longitude], { icon }).bindPopup('Tú Ubicación');
+        marker.addTo(this.map);
+      });
   }
 
 }

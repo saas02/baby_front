@@ -1,14 +1,31 @@
+<div class="panel callout">
 <div class="row">
     <div class="four columns">
         <h3>Fecha</h3>
         <h2 class="heading_supersize date"> {{ Information.date | date:'EEEE d MMMM' }}. </h2>
     </div>
+    <div *ngIf="Information.confirmation === null" class="four columns">
+        <h3>Confirmar Asistencia</h3>
+        <button class="button-success" (click)="changeDecision()">SI</button>
+        <button class="button-warning" (click)="changeDecision()">NO</button>
+    </div>
+    <div *ngIf="Information.confirmation === true" class="four columns">
+        <h2 class="heading_supersize">Gracias por Confirmar</h2>
+        <h2 class="heading_supersize">Te esperamos!!!!</h2>
+    </div>
+    <div *ngIf="Information.confirmation === false" class="four columns">
+        <h3>Deseas Cambiar de Opinión?</h3>
+        <button class="button-success change-opinion" (click)="changeDecision()">SI</button>
+    </div>
     <div class="four columns">
         <h3>Direccion</h3>
         <h2 class="heading_supersize">{{ Information.address }}. </h2>
     </div>
-    <div class="four columns">
-        <h3>Ubicacion</h3>
+</div>
+</div>
+<div class="row">
+    <div class="twelve columns">
         <div *ngIf="Information.latitude" id="map"></div>
     </div>
 </div>
+

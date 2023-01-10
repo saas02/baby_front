@@ -15,12 +15,10 @@ export class AppComponent {
   Information:Information;
 
   constructor(
-    private InformationService:InformationService
+    private InformationService:InformationService,
   ){
     this.load = true;
     this.Information = this.InformationService.getData();
-    console.log(this.Information);
-    //this.information = { };
     /*this.InformationService.getData().subscribe(
       data => {
         this.information = this.InformationService.getJsonData(data)

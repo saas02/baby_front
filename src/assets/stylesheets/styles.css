@@ -1,20 +1,45 @@
-.heading_supersize_center{
+.heading_supersize_center {
     text-align: center;
 }
 
-.heading_supersize_text{
-    font-family: 'Ranchers',sans-serif;
+.heading_supersize_text {
+    font-family: 'Ranchers', sans-serif;
     font-weight: normal;
     color: #38525a !important;
     font-size: 30px;
 }
 
-.heading_supersize, .date{
+.heading_supersize,
+.date {
     text-transform: capitalize;
 }
 
 #map {
-  height: 200px;
-  width: 100%;
-  max-width: 600px;
+    height: 200px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.button-success {
+    background-color: rgb(28, 184, 65);
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 50%;
+}
+
+.button-warning {
+    background-color:rgb(223, 117, 20);
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 50%;
+}
+
+.change-opinion{
+    min-width: 100%;
 }
