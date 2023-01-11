@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
 import { Observable, Subscriber } from 'rxjs';
+import { InformationService } from 'src/app/services/information.service';
 import { Information } from 'src/app/interfaces/information';
 import { environment } from 'src/environments/environment';
 import * as L from 'leaflet';
@@ -16,19 +17,29 @@ export class InformationComponent implements AfterViewInit {
   Information: Information;
   map: any;
 
-  constructor() {
-    this.Information = {};
+  constructor( private informationService: InformationService) {
+    this.Information = {};    
   }
 
   public ngAfterViewInit(): void {
-    console.log(this.Information);
-    if (this.Information.latitude && this.Information.longitude) {      
+    if (this.Information.latitude && this.Information.longitude) {
       this.loadMap(this.Information.latitude, this.Information.longitude);
     }
   }
 
-  changeDecision(){
-    console.log("decision");
+  changeDecision(type:string){    
+    let body = {
+      confirmation: type
+    }
+    this.informationService.putUpdateUser(body, this.Information.id ?? '').subscribe(
+      data => {
+        this.Information.confirmation = type;       
+        console.log(data);
+      }, err => {
+        this.Information.confirmation = null;
+        console.log(err);        
+      }
+    ); ;
   }
 
   private getCurrentPosition(): any {

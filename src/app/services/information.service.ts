@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -18,6 +17,11 @@ export class InformationService {
 
   getDataUser(id:string){    
     return this.http.get(`${this.endpoint}/${id}`);
+  }
+
+  putUpdateUser(body:object, id:string){  
+    const headers = { 'x-token': environment.tokenApi };  
+    return this.http.put(`${this.endpoint}/${id}`, body, { headers } );
   }
 
   getJsonData(data:object){
