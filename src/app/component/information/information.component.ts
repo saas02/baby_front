@@ -21,7 +21,8 @@ export class InformationComponent implements AfterViewInit {
   }
 
   public ngAfterViewInit(): void {
-    if (this.Information.latitude && this.Information.longitude) {
+    console.log(this.Information);
+    if (this.Information.latitude && this.Information.longitude) {      
       this.loadMap(this.Information.latitude, this.Information.longitude);
     }
   }

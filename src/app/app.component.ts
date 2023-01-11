@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { InformationService } from './services/information.service';
 import { Information } from './interfaces/information';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -22,17 +23,25 @@ export class AppComponent {
     this.load = true;
     this.Information = {};  
     this.activatedRoute.queryParams.subscribe((params) => {      
-      let id = (params['id']) ? params['id'] : null;
-      this.Information = this.InformationService.getData(id);                 
-    });
-    /*this.InformationService.getData().subscribe(
-      data => {
-        this.information = this.InformationService.getJsonData(data)
-        this.load = false;
-        
-      }, err => {
-        console.log(err);
-      }
-    );*/
+      if(params['id']){
+        this.InformationService.getDataUser(params['id']).subscribe(
+          user => {            
+            this.Information = this.InformationService.getJsonData(user)            
+          }, err => {
+            console.log(err);
+            this.Information = environment.user;
+          }
+        );  
+      }else{
+        this.InformationService.getDataUser('generic').subscribe(
+          user => {
+            this.Information = this.InformationService.getJsonData(user)            
+          }, err => {
+            console.log(err);
+            this.Information = environment.user;
+          }
+        );  
+      }           
+    });    
   }
 }
