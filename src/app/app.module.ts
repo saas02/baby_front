@@ -9,11 +9,14 @@ import { InformationComponent } from './component/information/information.compon
 import { FooterComponent } from './component/footer/footer.component';
 import { registerLocaleData } from '@angular/common';
 
+import { APP_ROUTING } from './app.routes';
+
 import { InformationService } from './services/information.service';
 
 import localeEsCo from '@angular/common/locales/es-CO';
 import { TransformdataPipe } from './pipes/transformdata.pipe';
 import { SafePipe } from './pipes/safe.pipe';
+import { EmptyPipe } from './pipes/empty.pipe';
 
 registerLocaleData(localeEsCo, 'es-CO');
 
@@ -26,11 +29,13 @@ registerLocaleData(localeEsCo, 'es-CO');
     InformationComponent,
     FooterComponent,
     TransformdataPipe,
-    SafePipe
+    SafePipe,
+    EmptyPipe
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    APP_ROUTING
   ],
   providers: [
     InformationService,

@@ -1,8 +1,8 @@
 <div class="row blur">
   <div class="twelve columns">
-    <app-header [Information]="Information"></app-header>
+    <app-header *ngIf="Information.name|notempty" [Information]="Information"></app-header>
     <app-video [Information]="Information"></app-video>
-    <app-message [Information]="Information"></app-message>
+    <app-message *ngIf="Information.partners|notempty" [Information]="Information"></app-message>
     <app-information [Information]="Information"></app-information>
     <app-footer></app-footer>
   </div>
