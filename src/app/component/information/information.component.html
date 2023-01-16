@@ -3,8 +3,7 @@
     <div *ngIf="Information.date" class="four columns">
         <h3>Fecha</h3>
         <h2 class="heading_supersize date"> {{ Information.date | date:'EEEE d MMMM' }}. </h2>
-    </div>
-    === {{ Information.confirmation }}
+    </div>    
     <div *ngIf="Information.confirmation === 'null' || Information.confirmation === null" class="four columns">
         <h3>Confirmar Asistencia</h3>
         <button class="button-success" (click)="changeDecision('true')">SI</button>
@@ -19,8 +18,13 @@
         <button class="button-success change-opinion" (click)="changeDecision('true')">SI</button>
     </div>
     <div *ngIf="Information.address" class="four columns">
-        <h3>Direccion</h3>
-        <h2 class="heading_supersize">{{ Information.address }}. </h2>
+        <h3>Direccion</h3>                    
+        <a href="https://goo.gl/maps/PwsYXUW35iAPfChJ7" target="_blank">
+            <h2 class="heading_supersize">
+                {{ Information.address }}
+                <img width="30" height="20" src="../../../assets/images/google_maps.svg.png"/>
+            </h2>            
+        </a>                    
     </div>
 </div>
 </div>
