@@ -1,30 +1,39 @@
 <div class="panel callout">
 <div class="row">
-    <div *ngIf="Information.date" class="four columns">
-        <h3>Fecha</h3>
-        <h2 class="heading_supersize date"> {{ Information.date | date:'EEEE d MMMM' }}. </h2>
-    </div>    
-    <div *ngIf="Information.confirmation === 'null' || Information.confirmation === null" class="four columns">
+    <div *ngIf="Information.date" class="six columns">
+        <h3>Fecha: </h3>
+        <h3 class="heading_supersize date"> {{ Information.date | date:'EEEE d MMMM' }}. </h3>
+    </div>        
+    <div *ngIf="Information.address" class="six columns">
+        <h3>Dirección: </h3>                    
+        <a href="https://goo.gl/maps/mhCbRLPYMoVVvVxm8" target="_blank">
+            <h3 class="heading_supersize">
+                {{ Information.address }}
+                <img width="30" height="20" src="../../../assets/images/google_maps.svg.png"/>
+            </h3>            
+        </a>                    
+    </div>   
+</div>
+</div>
+<div class="panel callout">
+<div class="row">    
+    <div *ngIf="Information.confirmation === 'null' || Information.confirmation === null" class="six columns">
         <h3>Confirmar Asistencia</h3>
         <button class="button-success" (click)="changeDecision('true')">SI</button>
         <button class="button-warning" (click)="changeDecision('false')">NO</button>
     </div>
-    <div *ngIf="Information.confirmation === 'true'" class="four columns">
+    <div *ngIf="Information.confirmation === 'true'" class="six columns">
         <h2 class="heading_supersize">Gracias por Confirmar</h2>
         <h2 class="heading_supersize">Te esperamos!!!!</h2>
     </div>
-    <div *ngIf="Information.confirmation === 'false'" class="four columns">
+    <div *ngIf="Information.confirmation === 'false'" class="six columns">
         <h3>Deseas Cambiar de Opinión?</h3>
         <button class="button-success change-opinion" (click)="changeDecision('true')">SI</button>
-    </div>
-    <div *ngIf="Information.address" class="four columns">
-        <h3>Direccion</h3>                    
-        <a href="https://goo.gl/maps/PwsYXUW35iAPfChJ7" target="_blank">
-            <h2 class="heading_supersize">
-                {{ Information.address }}
-                <img width="30" height="20" src="../../../assets/images/google_maps.svg.png"/>
-            </h2>            
-        </a>                    
+    </div>    
+    <div class="six columns">
+        <h3>Contacto: </h3>
+        <h3 class="heading_supersize">Sergio Amaya: 3167259347</h3>            
+        <h3 class="heading_supersize">Paola Lancheros: 3188918282</h3>        
     </div>
 </div>
 </div>
