@@ -17,8 +17,8 @@ export class InformationComponent implements AfterViewInit {
   Information: Information;
   map: any;
 
-  constructor( private informationService: InformationService) {
-    this.Information = {};    
+  constructor(private informationService: InformationService) {
+    this.Information = {};
   }
 
   public ngAfterViewInit(): void {
@@ -27,19 +27,20 @@ export class InformationComponent implements AfterViewInit {
     }
   }
 
-  changeDecision(type:string){    
+  changeDecision(type: string) {
     let body = {
       confirmation: type
     }
     this.informationService.putUpdateUser(body, this.Information.id ?? '').subscribe(
       data => {
-        this.Information.confirmation = type;       
-        console.log(data);
+        this.Information.confirmation = type;
+        const completeUrl = `${environment.URL}${environment.PHONE}${environment.MESSAGE}`
+        window.open(completeUrl, "_blank");
       }, err => {
         this.Information.confirmation = null;
-        console.log(err);        
+        console.log(err);
       }
-    ); ;
+    );;
   }
 
   private getCurrentPosition(): any {

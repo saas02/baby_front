@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   mapbox: {
-    accessToken: 'pk.eyJ1IjoiYnJhc2thbSIsImEiOiJja3NqcXBzbWoyZ3ZvMm5ybzA4N2dzaDR6In0.RUAYJFnNgOnn80wXkrV9ZA',
+    accessToken: 'pk.eyJ1Ijoic2FhczAyIiwiYSI6ImNsZXhhNTF1NDAwbHIzdG8ycmN4NGkweW4ifQ.D3KW7zGOmX-IAiWqFCGD2Q',
   },
   routes:{
     base: 'http://localhost:8002',
@@ -21,7 +21,10 @@ export const environment = {
     latitude: 4.635517934252235,
     longitude: -74.14845602276542  
   },
-  tokenApi: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJzYWFzMDJAZ21haWwuY29tIiwiaWF0IjoxNjczNDc1NTMxLCJleHAiOjE3MDUwMzMxMzF9.scle4uC_S5yWI5UzzwCdxVYLlrzY_cCirhc_U_GmDiY'
+  tokenApi: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJzYWFzMDJAZ21haWwuY29tIiwiaWF0IjoxNjczNDc1NTMxLCJleHAiOjE3MDUwMzMxMzF9.scle4uC_S5yWI5UzzwCdxVYLlrzY_cCirhc_U_GmDiY',
+  URL: 'https://api.whatsapp.com/send?phone=',
+  PHONE: '573167259347',
+  MESSAGE: '&text=Confirmo asistencia al baby Shower!!!',
 };
 
 /*
