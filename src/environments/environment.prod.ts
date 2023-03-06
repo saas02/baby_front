@@ -4,7 +4,7 @@ export const environment = {
     accessToken: 'pk.eyJ1Ijoic2FhczAyIiwiYSI6ImNsZXhhNTF1NDAwbHIzdG8ycmN4NGkweW4ifQ.D3KW7zGOmX-IAiWqFCGD2Q',
   },
   routes:{
-    base: 'http://localhost:8002',
+    base: 'https://baby-api.samaya.com.co',
     url: '/v1/api/',
     users: '/users',
     auth: '/auth'
@@ -13,7 +13,7 @@ export const environment = {
     id: "generic",
     date: new Date(),
     address: "Cra 89D # 32 15 Sur",
-    video: "http://player.vimeo.com/video/4749536",
+    video: "https://player.vimeo.com/video/4749536",
     latitude: 4.635517934252235,
     longitude: -74.14845602276542  
   },
