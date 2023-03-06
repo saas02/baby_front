@@ -9,7 +9,7 @@ export const environment = {
     users: '/users',
     auth: '/auth'
   },
-  data:{
+  user:{
     id: "generic",
     date: new Date(),
     address: "Cra 89D # 32 15 Sur",
