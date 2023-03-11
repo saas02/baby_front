@@ -34,8 +34,10 @@ export class InformationComponent implements AfterViewInit {
     this.informationService.putUpdateUser(body, this.Information.id ?? '').subscribe(
       data => {
         this.Information.confirmation = type;
-        const completeUrl = `${environment.URL}${environment.PHONE}${environment.MESSAGE}`
-        window.open(completeUrl, "_blank");
+        if(type === "true"){
+          const completeUrl = `${environment.URL}${environment.PHONE}${environment.MESSAGE}`
+          window.open(completeUrl, "_blank");
+        }
       }, err => {
         this.Information.confirmation = null;
         console.log(err);
