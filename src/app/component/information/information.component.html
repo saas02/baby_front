@@ -2,7 +2,7 @@
 <div class="row">
     <div *ngIf="Information.date" class="six columns">
         <h3>Fecha: </h3>
-        <h3 class="heading_supersize date"> {{ Information.date | date:'EEEE d MMMM h:mm a' }}. </h3>
+        <h3 class="heading_supersize date"> {{ Information.date | date:'EEEE d MMMM h:mm a':'GMT-5' }}. </h3>
     </div>        
     <div *ngIf="Information.address" class="six columns">
         <h3>Dirección: </h3>                    

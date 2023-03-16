@@ -2,7 +2,12 @@
     <div class="twelve columns">
         <div *ngIf="Information.video" class="flex-video widescreen vimeo">
             <iframe [src]='Information.video | safeUrl'
-                width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen
+                width="900"
+                height="506"
+                frameborder="0"
+                allow="autoplay"
+                webkitAllowFullScreen
+                mozallowfullscreen
                 allowFullScreen></iframe>
         </div>
     </div>
