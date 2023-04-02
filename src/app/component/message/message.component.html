@@ -5,7 +5,8 @@
             <p *ngIf="Information.partners|notempty" class="heading_supersize_text">
                 {{ Information.partners | transformdata }}
             </p>            
-            <h2 class="heading_supersize">Regalo: {{ Information.gifts }}</h2>
+            <h2 *ngIf="Information.partners|notempty" class="heading_supersize">Regalo: {{ Information.gifts }}</h2>
+            <h2 *ngIf="!Information.partners|notempty" class="heading_supersize">Regalo: Recarga la pagina, por favor!!!!</h2>
         </div>
     </div>
 </div>
